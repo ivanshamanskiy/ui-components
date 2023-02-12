@@ -4,74 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipping Card</title>
-    
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        section {
-            height: 100vh;
-            display: grid;
-            place-items: center;
-            background-color: #fff;
-        }
-
-        #container {
-            display: grid;
-            place-items: center;
-            transform-style: preserve-3d;
-            transition: all 1s;
-        }
-
-        .card {
-            position: absolute;
-            height: 400px;
-            width: 280px;
-            display: block;
-            color: #fff;
-            font-size: 110px;
-            display: grid;
-            place-items: center;
-            transform-style: preserve-3d;
-            backface-visibility: hidden;
-        }
-
-        .front {
-            background-color: blue;
-        }
-
-        .back {
-            background-color: red;
-            transform: rotateY(180deg);
-        }
-
-        .flipped {
-            transform: rotateY(-180deg);
-        }
-
-    </style>
+    <title>Star Rating</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+        <!-- добавил для возможности выставлении новой оценки -->
+        <button class="reset-btn" disabled>Reset</button>
+        <!-- вероятн, здесь сами звезды располагаются -->
+        <div id="star">
+        </div> 
+        <!-- а это контейнер для отображения их кол-ва -->
+        <div id="display-star"></div>
 
-<section>
-    <div id="container">
-        <div class="card front">F</div>
-        <div class="card back">B</div>
-    </div>
-</section>
-    
-<script>
-    const cont = document.getElementById('container');
-    cont.addEventListener('click', function(e) {
-        e.preventDefault();
-        cont.classList.contains('flipped') ? cont.classList.remove('flipped') 
-        : cont.classList.add('flipped')
-    })
-</script>
-
+        <script src="script.js"></script>
 </body>
 </html>
